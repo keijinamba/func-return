@@ -20,6 +20,7 @@ if ($keywords) {
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords" content="<?php echo $keywords; ?>">
+<link rel="shortcut icon" href="/favicon.ico">
 @endsection
 
 @section('css')
