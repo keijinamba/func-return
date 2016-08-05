@@ -13,15 +13,13 @@ class TagsController extends Controller
 {
     public function detail($id) {
 		$tag = Tag::find($id);
-		$categories = Category::all();
     $tags = Tag::all();
-		return view('tags/detail', ['tag' => $tag, 'categories' => $categories, 'tags' => $tags]);
+		return view('tags/detail', ['tag' => $tag, 'tags' => $tags]);
 	}
 
 	public function index() {
 		$tags = Tag::all();
-		$categories = Category::all();
-		return view('tags/index', ['tags' => $tags, 'categories' => $categories]);
+		return view('tags/index', ['tags' => $tags]);
 	}
 
 }

@@ -1,6 +1,6 @@
 <div class="main col-sm-12 col-md-9">
 	<div class="row center">
-		@foreach($categories as $category)
+		@foreach($data['categories'] as $category)
 		@if(count($category->articles_five) > 0)
 	  <div class="mb50">
 	  	<div class="panel panel-default shadow1">

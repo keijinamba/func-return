@@ -11,7 +11,7 @@
   </ul>
 </div>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h1 class="page-header">{{ $data['user']->display_name }}のダッシュボード</h1>
+  <h1 class="page-header">{{ $user_data['user']->display_name }}のダッシュボード</h1>
   <h2 class="sub-header">記事一覧</h2>
   <div class="btn-group mt50 mb20">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($data['params']['articles'] as $article)
+        @foreach($user_data['params']['articles'] as $article)
         <tr>
           <td>{{ $article->id }}</td>
           <td><a href="/{{ $article->id }}" class="color-333">{{ $article->title }}</a></td>
@@ -64,6 +64,6 @@
         <li><a href="/users/dashboad?sort=created_at&page=1">昇順</a></li>
       </ul>
     </div> -->
-    <div class="pagination-wrapper">{{ $data['params']['articles']->appends(['sort' => $data['params']['sort']])->render() }}</div>
+    <div class="pagination-wrapper">{{ $user_data['params']['articles']->appends(['sort' => $user_data['params']['sort']])->render() }}</div>
   </div>
 </div>

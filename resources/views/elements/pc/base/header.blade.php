@@ -6,7 +6,7 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
     <button class="header-menu-button">
       <span class="glyphicon glyphicon-menu-hamburger header-menu-icon" aria-hidden="true"></span>
     </button>
-    <a class="header-title" href="/">Univas</a>
+    <a class="header-title" href="/">FuncReturn</a>
   </div>
   <button class="header-search-button">
     <span class="glyphicon glyphicon-search nav-search" aria-hidden="true"></span>
@@ -14,12 +14,12 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
 </header>
 <div class="side-nav">
   <div class="side-nav-wrapper">
-    <h3 class="side-nav-title">Tech記事</h3>
+    <h3 class="side-nav-title">FuncReturn</h3>
     <nav>
       <dl>
         <dt>カテゴリー</dt>
         <dd>
-          @foreach($categories as $category)
+          @foreach($data['categories'] as $category)
           <a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
           @endforeach
         </dd>

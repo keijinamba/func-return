@@ -34,8 +34,7 @@ class UsersController extends Controller
 
     public function about() {
         $user = User::find(1);
-        $categories = Category::all();
-        return view('users/about', ['user' => $user, 'categories' => $categories]);
+        return view('users/about', ['user' => $user]);
     }
 
     public function good(Request $data) {
@@ -56,15 +55,15 @@ class UsersController extends Controller
         $user = Auth::user();
         if (!$user) return redirect('/admin-user/auth/login');
 
-        $data = array('user' => $user, 'params' => array());
+        $user_data = array('user' => $user, 'params' => array());
         if ($type == "articles" || $type == null) {
             $sort = ($req->sort) ? $req->sort : 'updated_at';
             $articles = Article::orderBy($sort, 'desc')->paginate(15);
-            $data['params']['articles'] = $articles;
-            $data['params']['sort'] = $sort;
+            $user_data['params']['articles'] = $articles;
+            $user_data['params']['sort'] = $sort;
         }
 
         $categories = Category::all();
-        return view('users/dashboad', ['categories' => $categories, 'data' => $data]);
+        return view('users/dashboad', ['categories' => $categories, 'user_data' => $user_data]);
     }
 }

@@ -4,7 +4,7 @@
 	    <h3 class="panel-title">カテゴリー一覧</h3>
 	  </div>
     <ul class="panel-body list-group">
-    	@foreach($categories as $category)
+    	@foreach($data['categories'] as $category)
 		  <a href="/categories/{{ $category->id }}" class="list-group-item">{{ $category->name }}</a>
 		  @endforeach
 		</ul>

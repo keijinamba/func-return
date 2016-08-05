@@ -15,10 +15,9 @@ use App\ArticlesTag;
 class ArticlesController extends Controller
 {
     public function index() {
-    	$categories = Category::all();
         $tags = Tag::all();
         $user = Auth::user();
-    	return view('articles/index', ['categories' => $categories, 'tags' => $tags]);
+    	return view('articles/index', ['tags' => $tags]);
     }
 
     public function view($id) {
@@ -30,14 +29,12 @@ class ArticlesController extends Controller
             $article->save();
         }
         Cookie::queue('_id', $id, 1);
-    	$categories = Category::all();
         $tags = Tag::all();
-    	return view('articles/view', ['article' => $article, 'top_articles' => $top_articles, 'categories' => $categories, 'tags' => $tags]);
+    	return view('articles/view', ['article' => $article, 'top_articles' => $top_articles, 'tags' => $tags]);
     }
 
     public function getAdd() {
-        $categories = Category::all();
-        return view('articles/add', ['categories' => $categories]);
+        return view('articles/add');
     }
 
     public function postAdd(Request $data) {
@@ -80,9 +77,8 @@ class ArticlesController extends Controller
     public function getSearch(Request $data) {
         $articles = Article::where('title', 'like', '%'.$data->word.'%')->paginate(10);
         $top_articles = Article::orderBy('view_count', 'desc')->limit(5)->get();
-        $categories = Category::all();
         $tags = Tag::all();
-        return view('articles/search', ['word' => $data->word, 'articles' => $articles, 'top_articles' => $top_articles, 'categories' => $categories, 'tags' => $tags]);
+        return view('articles/search', ['word' => $data->word, 'articles' => $articles, 'top_articles' => $top_articles, 'tags' => $tags]);
     }
 
     public function postSearch(Request $data) {

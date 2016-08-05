@@ -1,6 +1,26 @@
 @extends('layouts/default')
 
-@section('title', 'Tech記事｜詳細')
+<?php
+$keywords = '';
+foreach ($article->articlestag as $articlestag) {
+	if ($articlestag->tags) {
+		$keywords .= $articlestag->tags->name.',';
+	}
+}
+if ($keywords) {
+	$keywords = substr($keywords, 0, -1);
+}
+?>
+
+@section('meta')
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{{ $article->title }}｜ファンクリターン</title>
+<meta name="description" content="{{ $article->discription }}"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="keywords" content="<?php echo $keywords; ?>">
+@endsection
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="/assets/highlight/styles/github-gist.css">

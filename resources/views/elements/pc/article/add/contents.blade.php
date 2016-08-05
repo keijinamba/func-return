@@ -38,7 +38,7 @@
 		  </div>
 		  <div class="panel-body">
 		    <select class="form-control" name="category">
-		    	@foreach($categories as $category)
+		    	@foreach($data['categories'] as $category)
           <option value="{{ $category->id }}">{{ $category->name }}</option>
           @endforeach
         </select>

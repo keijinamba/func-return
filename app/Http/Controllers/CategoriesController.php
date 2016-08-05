@@ -12,14 +12,12 @@ class CategoriesController extends Controller
 {
 	public function detail($id) {
 		$category = Category::find($id);
-		$categories = Category::all();
         $tags = Tag::all();
-		return view('categories/detail', ['category' => $category, 'categories' => $categories, 'tags' => $tags]);
+		return view('categories/detail', ['category' => $category, 'tags' => $tags]);
 	}
 
 	public function index() {
-		$categories = Category::all();
-		return view('categories/index', ['categories' => $categories]);
+		return view('categories/index');
 	}
 
     public function getAdd() {
