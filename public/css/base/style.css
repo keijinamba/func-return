@@ -177,3 +177,14 @@ a.list-group-item:hover { background-color: initial; }
 @media (min-width: 768px) {
 .navbar-nav>li>a, .navbar-brand { padding-top: 20px; padding-bottom: 20px; font-weight: 400; }
 }
+/* view */
+.view_discription { line-height: 40px; }
+.body h1 { border-bottom: solid 3px #eee; font-size: 30px; color: #555; font-weight: 600; line-height: 35px; margin-bottom: 30px; padding-bottom: 10px; }
+.body h2 { border-bottom: solid 1px #eee; font-size: 25px; color: #555; font-weight: 600; line-height: 30px; margin-bottom: 30px; padding-bottom: 5px; }
+.body h3 { font-size: 25px; color: #555; font-weight: 600; line-height: 30px; margin-bottom: 30px; }
+
+@media(max-width: 768px) {
+	.body h1 { border-bottom: solid 3px #eee; font-size: 25px; color: #555; font-weight: 600; line-height: 30px; margin-bottom: 30px; padding-bottom: 10px; }
+	.body h2 { border-bottom: solid 1px #eee; font-size: 20px; color: #555; font-weight: 600; line-height: 25px; margin-bottom: 30px; padding-bottom: 5px; }
+	.body h3 { font-size: 20px; color: #555; font-weight: 600; line-height: 25px; margin-bottom: 30px; }
+}

@@ -9,7 +9,7 @@
 		  <h1 class="color-cobalt">{{ $article->title }}</h1>
 		</div>
 		<div class="mt30 mb50">
-			<h4>{{ $article->discription }}</h4>
+			<h4 class="view_discription">{{ $article->discription }}</h4>
 		</div>
 		<div class="main-category">
 			@if($article->category->thumb)
