@@ -172,7 +172,7 @@ a.list-group-item:hover { background-color: initial; }
 .main { padding: 20px; margin-top: 60px; }
 .main .page-header { margin-top: 0; }
 @media (min-width: 768px) {
-  .main { padding-right: 40px; padding-left: 40px; }
+  .main { padding-right: 40px; padding-left: 40px; margin-top: 0; }
 }
 @media (min-width: 768px) {
 .navbar-nav>li>a, .navbar-brand { padding-top: 20px; padding-bottom: 20px; font-weight: 400; }
