@@ -38,5 +38,5 @@ Route::get('/{id}', 'ArticlesController@view');
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
 
 // 登録のルート定義…
-Route::get('/auth/register', 'Auth\AuthController@getRegister');
-Route::post('/auth/register', 'Auth\AuthController@postRegister');
+// Route::get('/auth/register', 'Auth\AuthController@getRegister');
+// Route::post('/auth/register', 'Auth\AuthController@postRegister');
