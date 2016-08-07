@@ -11,6 +11,7 @@ use App\Article;
 use App\Category;
 use App\Tag;
 use App\ArticlesTag;
+use App\Comment;
 
 class ArticlesController extends Controller
 {

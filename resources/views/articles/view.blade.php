@@ -33,8 +33,8 @@ if ($keywords) {
 
 @section('content')
 @include('elements/pc/base/header')
-@include('elements/pc/base/pankuzu', ['pankuzu' => ['Home' => '/', $article->id => 'disable']])
-@include('elements/pc/article/view/contents', ['article' => $article, 'tags' => $tags])
+@include('elements/pc/base/pankuzu', ['pankuzu' => ['Home' => '/', 'Category' => '/categories', $article->category->name => '/categories/'.$article->category->id, $article->id => 'disable']])
+@include('elements/pc/article/view/contents')
 @include('elements/pc/base/footer')
 @endsection
 

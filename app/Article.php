@@ -17,4 +17,8 @@ class Article extends Model
     public function articlestag() {
     	return $this->hasMany('App\ArticlesTag');
     }
+
+    public function comments() {
+    	return $this->hasMany('App\Comment');
+    }
 }
