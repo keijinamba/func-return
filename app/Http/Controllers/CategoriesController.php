@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Category;
 use App\Tag;
+use Auth;
 
 class CategoriesController extends Controller
 {
@@ -21,6 +22,9 @@ class CategoriesController extends Controller
 	}
 
     public function getAdd() {
+        $user = Auth::user();
+        if (!$user) return redirect('/admin-user/auth/login');
+
     	return view('categories/add');
     }
 
