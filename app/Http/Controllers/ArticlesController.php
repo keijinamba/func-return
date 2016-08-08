@@ -35,6 +35,9 @@ class ArticlesController extends Controller
     }
 
     public function getAdd() {
+        $user = Auth::user();
+        if (!$user) return redirect('/admin-user/auth/login');
+
         return view('articles/add');
     }
 
@@ -55,8 +58,10 @@ class ArticlesController extends Controller
     }
 
     public function getEdit() {
-    	$categories = Category::all();
-    	return view('articles/edit', ['categories' => $categories]);
+    	$user = Auth::user();
+        if (!$user) return redirect('/admin-user/auth/login');
+
+    	return view('articles/edit');
     }
 
     public function postEdit(Request $data) {
