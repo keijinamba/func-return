@@ -1,12 +1,12 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
     <li class="active"><a href="">記事一覧</a></li>
-    <li><a href="#">Reports</a></li>
-    <li><a href="#">Analytics</a></li>
-    <li><a href="#">Export</a></li>
   </ul>
   <ul class="nav nav-sidebar">
     <li><a href="/articles/add">新規記事作成</a></li>
+    <li><a href="/categories/add">新カテゴリー追加</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
     <li><a href="/users/logout">Logout</a></li>
   </ul>
 </div>
