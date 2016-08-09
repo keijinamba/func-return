@@ -10,8 +10,8 @@
 					@foreach($category->articles as $article)
 					  <li role="presentation" class="w100p">
 					  	<a href="/{{ $article->id }}" class="color-444">
-					  		<h4 class="fs20">{{ $article->title }}</h4>
-					  		<p class="fs14">{{ $article->discription }}</p>
+					  		<h4 class="fs20 lh30">{{ $article->title }}</h4>
+					  		<p class="fs14 color-777">{{ $article->discription }}</p>
 					  	</a>
 					  </li>
 				  @endforeach

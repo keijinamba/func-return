@@ -10,7 +10,7 @@
 		      </a>
 		    </div>
 		    <div class="media-body">
-		      <a href="/{{ $article->id }}" class="color-333 fs16 media-heading">{{ $article->title }}</a>
+		      <a href="/{{ $article->id }}" class="color-333 fs16 lh30 media-heading">{{ $article->title }}</a>
 		    </div>
 		  </li>
 		  @endforeach

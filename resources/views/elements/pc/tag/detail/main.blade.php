@@ -10,8 +10,8 @@
 					@foreach($tag->articlestag as $articlestag)
 					  <li role="presentation" class="w100p">
 					  	<a href="/{{ $articlestag->articles->id }}" class="color-444">
-					  		<h4 class="fs20">{{ $articlestag->articles->title }}</h4>
-					  		<p class="fs14">{{ $articlestag->articles->discription }}</p>
+					  		<h4 class="fs20 lh30">{{ $articlestag->articles->title }}</h4>
+					  		<p class="fs14 color-777">{{ $articlestag->articles->discription }}</p>
 					  	</a>
 					  </li>
 				  @endforeach
