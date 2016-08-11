@@ -40,6 +40,7 @@ if ($keywords) {
 
 @section('script')
 <script type="text/javascript" src="/assets/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script>
 	hljs.initHighlightingOnLoad();
 </script>
