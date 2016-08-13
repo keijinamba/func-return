@@ -5,9 +5,10 @@
 		<button class="btn btn-primary right mb20 mr5" type="button">下書き保存</button>
 		<input type="text" class="form-control mb20" placeholder="タイトル" name="title">
 		<textarea type="text" rows="3" class="form-control mb20" placeholder="ディスクリプション" name="discription"></textarea>
-		<div class="preview"></div>
-		<input class="textarea-body" name="body" type="hidden"></input>
-		<div class="panel panel-default">
+		<div class="preview">{!! $article->body !!}</div>
+		<textarea class="edit-textarea-body form-control" name="body">{{ $article->body }}</textarea>
+		<!-- <input class="textarea-body" name="body" type="hidden" value="{{ $article->body }}"></input> -->
+		<!-- <div class="panel panel-default">
 		  <div class="panel-body">
 		    <div class="btn-group" role="group" aria-label="button-group">
 				  <button type="button" class="btn btn-default edit-button-rta">RTA</button>
@@ -26,7 +27,7 @@
 	      <textarea style="width:100%;" rows="20" cols="60" class="rta" id="body" placeholder="本文"></textarea>
 	    </div>
 	  </div>
-  </div>
+  </div> -->
   <div class="col-sm-12 col-md-4">
   	<div class="panel panel-default">
 		  <div class="panel-heading">

@@ -19,13 +19,13 @@
 				</div>
 		  </div>
 		</div>
-		<div class="test-textarea unvisible">
-			<textarea rows="20" cols="60" class="test"></textarea>
+		<div class="test-textarea add-textarea unvisible">
+			<textarea rows="20" cols="60" class="test form-control"></textarea>
 		</div>
-		<div class="code-textarea unvisible">
-			<textarea rows="20" cols="60" class="code"></textarea>
+		<div class="code-textarea add-textarea unvisible">
+			<textarea rows="20" cols="60" class="code form-control"></textarea>
 		</div>
-	  <div class="control-group unvisible">
+	  <div class="rta-textarea add-textarea control-group unvisible">
 	    <div class="controls">
 	      <textarea style="width:100%;" rows="20" cols="60" class="rta" id="body" placeholder="本文"></textarea>
 	    </div>

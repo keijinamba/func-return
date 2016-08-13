@@ -23,7 +23,7 @@ class ArticlesController extends Controller
 
     public function view($id) {
     	$article = Article::find($id);
-        $top_articles = Article::orderBy('view_count', 'desc')->limit(5)->get();
+        $top_articles = Article::where('status', 1)->orderBy('view_count', 'desc')->limit(5)->get();
         $value = Cookie::get('_id');
         if ($value != $id) {
             $article->view_count++;
@@ -57,11 +57,13 @@ class ArticlesController extends Controller
         return redirect('/');
     }
 
-    public function getEdit() {
+    public function getEdit($id) {
     	$user = Auth::user();
         if (!$user) return redirect('/admin-user/auth/login');
 
-    	return view('articles/edit');
+        $article = Article::find($id);
+
+    	return view('articles/edit', ['article' => $article]);
     }
 
     public function postEdit(Request $data) {

@@ -1,15 +1,21 @@
 $('.edit-button-rta').click(function() {
-	$('.control-group').removeClass('unvisible');
+	$('.rta-textarea').removeClass('unvisible');
+	if (!$('.code-textarea').hasClass('unvisible')) $('.code-textarea').addClass('unvisible');
+	if (!$('.test-textarea').hasClass('unvisible')) $('.test-textarea').addClass('unvisible');
 });
 $('.edit-button-code').click(function() {
 	$('.code-textarea').removeClass('unvisible');
+	if (!$('.rta-textarea').hasClass('unvisible')) $('.rta-textarea').addClass('unvisible');
+	if (!$('.test-textarea').hasClass('unvisible')) $('.test-textarea').addClass('unvisible');
 });
 $('.edit-button-test').click(function() {
 	$('.test-textarea').removeClass('unvisible');
+	if (!$('.rta-textarea').hasClass('unvisible')) $('.rta-textarea').addClass('unvisible');
+	if (!$('.code-textarea').hasClass('unvisible')) $('.code-textarea').addClass('unvisible');
 });
 $('.edit-button-add').click(function(){
-	if( !$('.control-group').hasClass('unvisible')) {
-		$('.control-group').addClass('unvisible');
+	if( !$('.rta-textarea').hasClass('unvisible')) {
+		$('.rta-textarea').addClass('unvisible');
 		$('.preview').append($('.rta').val());
 		$('.textarea-body').val($('.textarea-body').val() + $('.rta').val());
 		$('.rta').val('');
