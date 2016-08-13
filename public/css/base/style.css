@@ -95,7 +95,7 @@ body .wrapper { margin: 0 auto; }
 .thumb-size { height: 200px; }
 .list_thumb_size { width: 70px; }
 .list_box { margin-top: 30px !important; margin-bottom: 10px; }
-.text-border { text-shadow: #444 1px 1px 0px, #444 -1px 1px 0px, #444 1px -1px 0px, #444 -1px -1px 0px; }
+.text-border { text-shadow: #666 1px 1px 0px, #666 -1px 1px 0px, #666 1px -1px 0px, #666 -1px -1px 0px; }
 
 @media (max-width: 991px) {
 .w-auto { margin-left: 0; margin-right: 0; }
