@@ -6,7 +6,13 @@
 		@else
 		@foreach($article->comments as $comment)
 		<div>
-			<span class="comment_content_name">{{ $comment->name }}</span>
+			<span class="comment_content_name">
+				@if($comment->name)
+				{{ $comment->name }}
+				@else
+				No Name
+				@endif
+			</span>
 			<span class="comment_content_date">{{ $comment->updated_at }}</span>
 			<div class="comment_content_body">{{ $comment->body }}</div>
 		</div>
@@ -21,7 +27,7 @@
 		</div>
 		<div>
 			<label>コメント</label>
-			<textarea class="comment_input_body form-control" name="comment" placeholder="コメント" rows="6"></textarea>
+			<textarea class="comment_input_body form-control" name="comment" placeholder="コメント" rows="6" required></textarea>
 		</div>
 		<button type="submit" class="btn btn-default btn-primary comment_submit">
 		  <span class="glyphicon glyphicon-open" aria-hidden="true"></span> 提出
