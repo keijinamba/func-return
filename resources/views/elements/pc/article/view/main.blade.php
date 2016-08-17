@@ -56,7 +56,7 @@
 				  <li class="media list_box">
 				    <div class="media-left">
 				      <a href="/{{ $top_article->id }}">
-				        <img class="media-object list_thumb_size" src="{{ $top_article->category->thumb }}" alt="サムネ">
+				        <img class="media-object list_thumb_size" src="/img/thumb/thumbnail<?php echo rand(1, 10); ?>_sm.jpg" alt="サムネ">
 				      </a>
 				    </div>
 				    <div class="media-body">
