@@ -8,7 +8,7 @@
 		  <li class="media list_box">
 		    <div class="media-left">
 		      <a href="/{{ $article->id }}">
-		        <img class="media-object list_thumb_size" src="/img/thumb/thumbnail<?php echo rand(1, 10); ?>.jpg" alt="サムネ">
+		        <img class="media-object list_thumb_size" src="/img/thumb/thumbnail<?php echo rand(1, 10); ?>_sm.jpg" alt="サムネ">
 		      </a>
 		    </div>
 		    <div class="media-body">
