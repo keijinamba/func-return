@@ -12,7 +12,6 @@
 			<h4 class="view_discription">{{ $article->discription }}</h4>
 		</div>
 		<div class="main-category">
-			@if($article->category->thumb)
 			<!-- <img class="thumb-size mb100 center" src="{{ $article->category->thumb }}"> -->
 			<div class="jumbotron" style="background-image: url('/img/thumb/thumbnail<?php echo rand(1, 10); ?>.jpg');">
 				<div class="container">
@@ -21,15 +20,6 @@
 				  <p><a class="btn btn-primary btn-lg" href="/categories/{{ $article->category->id }}" role="button">もっと見る</a></p>
 			  </div>
 			</div>
-			@else
-			<div class="jumbotron">
-				<div class="container">
-			    <h1>{{ $article->category->name }}</h1>
-					<p>This is a <em>{{ $article->category->name }}</em> categorized page. To see more articles about <em>{{ $article->category->name }}</em>, click the button!</p>
-				  <p><a class="btn btn-primary btn-lg" href="/categories/{{ $article->category->id }}" role="button">もっと見る</a></p>
-			  </div>
-			</div>
-			@endif
 		</div>
 		<div class="body">
 			{!! $article->body !!}
