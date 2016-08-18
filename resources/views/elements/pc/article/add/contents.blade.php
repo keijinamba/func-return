@@ -1,4 +1,4 @@
-<form class="form-horizontal col-sm-12 col-md-12 row" name="rtaform" id="rtaform" method="POST" action="/articles/edit">
+<form class="form-horizontal col-sm-12 col-md-12 row" name="rtaform" id="rtaform" method="POST" action="/articles/add">
   {!! csrf_field() !!}
 	<div class="col-sm-12 col-md-8">
 		<button class="btn btn-primary right mb20 mr5" type="button" onclick="submit();">公開</button>
