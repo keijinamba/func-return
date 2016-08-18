@@ -159,7 +159,7 @@ header.header a { text-decoration: none; }
 .bcolor a, .bcolor small, .header-search-button, .header-menu-icon { color: #fff; }
 .nav>li>a:focus, .nav>li>a:hover { text-decoration: none; background-color: initial; }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover { background-color: initial; border-color: initial; }
-.breadcrumb { background-color: initial; margin-top: 100px; border-radius: 1px; }
+.breadcrumb { background-color: initial; margin-top: 100px; border-radius: 1px; overflow-x: auto; word-wrap: normal; white-space: nowrap; }
 .breadcrumb li { font-size: 11px; }
 a.list-group-item:hover { background-color: initial; }
 .panel-default>.panel-heading { background-color: initial; }
