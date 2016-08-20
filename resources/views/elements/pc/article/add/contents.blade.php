@@ -13,6 +13,7 @@
 				  <button type="button" class="btn btn-default edit-button-rta">RTA</button>
 				  <button type="button" class="btn btn-default edit-button-code">CODE</button>
 				  <button type="button" class="btn btn-default edit-button-test">TEST</button>
+				  <a href="#myModal" role="button" class="btn btn-default edit-button-image" data-toggle="modal">IMAGE</a>
 				</div>
 				<div class="btn-group right" role="group" aria-label="button-group">
 				  <button type="button" class="btn btn-default edit-button-add">追加</button>
@@ -30,6 +31,24 @@
 	      <textarea style="width:100%;" rows="20" cols="60" class="rta" id="body" placeholder="本文"></textarea>
 	    </div>
 	  </div>
+	  <div class="rta-textarea add-textarea control-group unvisible">
+	    <div class="controls">
+	      <textarea style="width:100%;" rows="20" cols="60" class="rta" id="body" placeholder="本文"></textarea>
+	    </div>
+	  </div>
+	  <div id="myModal" class="image-modal modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">画像選択</h3>
+      </div>
+      <div class="modal-body row">
+      	
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary image_decide">Save changes</button>
+      </div>
+    </div>
   </div>
   <div class="col-sm-12 col-md-4">
   	<div class="panel panel-default">
@@ -53,4 +72,8 @@
 		  </div>
 		</div>
   </div>
+</form>
+<form id="image_form">
+  <input id="image_form_file" type="file" name="file">
+  <input id="image_form_submit" type="button" value="ファイルをアップロードする">
 </form>

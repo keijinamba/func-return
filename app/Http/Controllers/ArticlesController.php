@@ -12,6 +12,7 @@ use App\Category;
 use App\Tag;
 use App\ArticlesTag;
 use App\Comment;
+use Image;
 
 class ArticlesController extends Controller
 {
@@ -119,5 +120,20 @@ class ArticlesController extends Controller
             'tag_id' => $tag_id
         ]);
         return true;
+    }
+
+    public function upload_image(Request $data) {
+        if ($data->file->getSize() == 0) return json_encode(array('result' => 'error'));
+
+        $fileName = $data->file->getClientOriginalName();
+        $image = Image::make($data->file->getRealPath());
+        $image->save(public_path() . '/img/upload/' . $fileName);
+        return json_encode(array('result' => 'success'));
+    }
+
+    public function findImages(Request $data) {
+        $files = scandir(public_path(). "/img/upload");
+
+        return json_encode(array('files' => $files));
     }
 }

@@ -21,6 +21,8 @@ Route::get('/users/dashboad/{type}', 'UsersController@dashboad');
 Route::get('/users/logout', 'UsersController@getLogout');
 Route::get('/articles/add', 'ArticlesController@getAdd');
 Route::post('/articles/add', 'ArticlesController@postAdd');
+Route::post('/articles/upload_image', 'ArticlesController@upload_image');
+Route::post('/articles/findImages', 'ArticlesController@findImages');
 Route::get('/articles/edit/{id}', 'ArticlesController@getEdit');
 Route::post('/articles/edit{id}', 'ArticlesController@postEdit');
 Route::get('/search', 'ArticlesController@getSearch');
