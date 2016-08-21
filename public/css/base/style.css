@@ -189,6 +189,9 @@ a.list-group-item:hover { background-color: initial; }
 .about_good .user-good span { font-size: 45px; }
 .about_bad .user-bad span { font-size: 45px; }
 .about_count { font-size: 30px; }
+.user-about .panel-heading .panel-title { font-size: 25px; }
+.user-about .panel-body { font-size: 18px; }
+/*.sns-box { height: 300px;  white-space: pre; }*/
 @media (max-width: 991px) {
   img.about_thumb { max-width: 100%; }
   h1.about_title { font-size: 24px; font-weight: 600; margin: 0 0 10px 0; }
@@ -196,6 +199,8 @@ a.list-group-item:hover { background-color: initial; }
   .about_good .user-good span { font-size: 30px; }
   .about_bad .user-bad span { font-size: 30px; }
   .about_count { font-size: 24px; }
+  .user-about .panel-heading .panel-title { font-size: 20px; }
+  .user-about .panel-body { font-size: 15px; }
 }
 /* edit add */
 .add-textarea { margin: 40px 0; }
