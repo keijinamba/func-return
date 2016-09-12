@@ -11,7 +11,7 @@ class Category extends Model
     ];
 
     public function articles_five() {
-        return $this->hasMany('App\Article')->where('status', 1)->orderBy('updated_at', 'DESC')->limit(5);
+        return $this->hasMany('App\Article')->where('status', 1)->orderBy('created_at', 'DESC')->limit(5);
     }
 
     public function articles() {
