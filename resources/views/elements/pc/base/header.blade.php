@@ -12,7 +12,7 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
     <span class="glyphicon glyphicon-search nav-search" aria-hidden="true"></span>
   </button>
 </header>
-<div class="side-nav">
+<div class="side-nav mobile-sidebar">
   <div class="side-nav-wrapper">
     <h3 class="side-nav-title">FuncReturn</h3>
     <nav>
@@ -25,6 +25,7 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
         </dd>
         <dt>その他のページ</dt>
         <dd>
+          <a href="/models">モデルアプリ</a>
           <a href="/about">制作者について</a>
           <a href="mailto:kijnmb.1110@gmail.com">お問い合わせ</a>
         </dd>
