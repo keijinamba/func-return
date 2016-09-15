@@ -63,8 +63,7 @@ window.addEventListener("load", function(event) {
             if (isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchMoveX - touchStartX)) {
                 autoTranslate(touchMoveX, 'right');
                 autoMask(touchMoveX, 'right');
-            }
-            if (!isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchStartX - touchMoveX)) {
+            } else if (!isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchStartX - touchMoveX)) {
                 scrollable();
                 autoTranslate(touchMoveX, 'left');
                 autoMask(touchMoveX, 'left');
@@ -110,7 +109,7 @@ window.addEventListener("load", function(event) {
     }
 
     function isQuickFlip(actionEndTime, actionDistance) {
-        if (actionDistance / actionEndTime > 4) {
+        if (actionDistance / actionEndTime > 0) {
             return true;
         };
     }
