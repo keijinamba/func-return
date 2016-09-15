@@ -55,21 +55,15 @@ window.addEventListener("load", function(event) {
     window.addEventListener("touchend", function(event) {
         if (!isShown && !trigger) return;
         if (isOverSideFrame(touchStartX) && !wasMoved) {
+            console.log('こっち');
             scrollable();
             autoTranslate(241, 'left');
             autoMask(241, 'left');
             autoMaskHide();
         } else {
-            if (isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchMoveX - touchStartX)) {
-                autoTranslate(touchMoveX, 'right');
-                autoMask(touchMoveX, 'right');
-            } else if (!isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchStartX - touchMoveX)) {
-                scrollable();
-                autoTranslate(touchMoveX, 'left');
-                autoMask(touchMoveX, 'left');
-                autoMaskHide();
-            };
-        };
+            // console.log(isQuickFlip(new Date().getTime(), touchMoveX - touchStartX));
+            afterChasing(touchStartX, touchMoveX);
+        }
         trigger = false;
     }, false);
 
@@ -93,6 +87,33 @@ window.addEventListener("load", function(event) {
         });
     }
 
+    function afterChasing(touchStartX, touchMoveX) {
+        if (isQuickFlip(new Date().getTime(), touchMoveX - touchStartX)) {
+            autoTranslate(touchMoveX, 'right');
+            autoMask(touchMoveX, 'right');
+            return;
+        };
+        if (isQuickFlip(new Date().getTime(), touchStartX - touchMoveX)) {
+            scrollable();
+            autoTranslate(touchMoveX, 'left');
+            autoMask(touchMoveX, 'left');
+            autoMaskHide();
+            return;
+        };
+        if (isOverHalf(touchMoveX)) {
+            autoTranslate(touchMoveX, 'right');
+            autoMask(touchMoveX, 'right');
+            return;
+        }
+        if (!isOverHalf(touchMoveX)) {
+            scrollable();
+            autoTranslate(touchMoveX, 'left');
+            autoMask(touchMoveX, 'left');
+            autoMaskHide();
+            return;
+        }
+    }
+
     function sidebarOnMoving(X) {
         $('.modal-mask').css('opasity', X / 240);
         $('.mobile-sidebar').css('left', X);
@@ -109,7 +130,8 @@ window.addEventListener("load", function(event) {
     }
 
     function isQuickFlip(actionEndTime, actionDistance) {
-        if (actionDistance / actionEndTime > 0) {
+        if (actionDistance < 0 || 300 < actionDistance) return false;
+        if (actionDistance / (actionEndTime - actionStartTime) > 0.1) {
             return true;
         };
     }
