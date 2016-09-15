@@ -1,9 +1,11 @@
 window.addEventListener("load", function(event) {
+
     var touchStartX;
     var touchStartY;
     var touchMoveX;
     var touchMoveY;
     var barPositionX;
+    var actionStartTime;
     var trigger = false;
     var isShown = false;
     var wasMoved = false;
@@ -24,6 +26,7 @@ window.addEventListener("load", function(event) {
 
         trigger = true;
         beforeChaing();
+        actionStartTime = new Date().getTime();
     }, false);
  
     // 移動時
@@ -57,10 +60,11 @@ window.addEventListener("load", function(event) {
             autoMask(241, 'left');
             autoMaskHide();
         } else {
-            if (isOverHalf(touchMoveX)) {
+            if (isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchMoveX - touchStartX)) {
                 autoTranslate(touchMoveX, 'right');
                 autoMask(touchMoveX, 'right');
-            } else {
+            }
+            if (!isOverHalf(touchMoveX) || isQuickFlip(new Date().getTime(), touchStartX - touchMoveX)) {
                 scrollable();
                 autoTranslate(touchMoveX, 'left');
                 autoMask(touchMoveX, 'left');
@@ -105,11 +109,17 @@ window.addEventListener("load", function(event) {
         return X > 120;
     }
 
+    function isQuickFlip(actionEndTime, actionDistance) {
+        if (actionDistance / actionEndTime > 4) {
+            return true;
+        };
+    }
+
     function isOverSideFrame(X) {
         return X > 241;
     }
 
-    function isAble(isShow) {
+    function isAble(isShown) {
         if (isShown) {
             return touchStartX - touchMoveX > 3;
         } else {
