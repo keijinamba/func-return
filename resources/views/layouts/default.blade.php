@@ -6,7 +6,7 @@
 	@yield('css')
 	<link rel="stylesheet" type="text/css" href="/css/base/style.css">
 </head>
-<body>
+<body class="<?php echo ($isMobile) ? 'sp' : 'pc' ; ?>">
 	<div class="wrapper row">
 		@yield('content')
 	</div>

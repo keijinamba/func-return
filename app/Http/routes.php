@@ -34,6 +34,8 @@ Route::post('/categories/add', 'CategoriesController@postAdd');
 Route::get('/tags', 'TagsController@index');
 Route::get('/tags/{id}', 'TagsController@detail');
 Route::post('/comments/add', 'CommentsController@add');
+Route::get('/models/category/{id}', 'ModelsCategoriesController@category');
+Route::get('/models', 'ModelsController@index');
 Route::get('/{id}', 'ArticlesController@view');
 
 // 認証のルート定義…

@@ -1,5 +1,7 @@
 window.addEventListener("load", function(event) {
 
+    if (document.body.classList.contains('pc')) return;
+
     var touchStartX;
     var touchStartY;
     var touchMoveX;
@@ -9,6 +11,7 @@ window.addEventListener("load", function(event) {
     var trigger = false;
     var isShown = false;
     var wasMoved = false;
+    var sliderWidth = $('.mobile-sidebar').outerWidth();
  
     // 開始時
     window.addEventListener("touchstart", function(event) {
@@ -44,7 +47,7 @@ window.addEventListener("load", function(event) {
         };
 
         if (!isShown && touchMoveX - touchStartX <= 3) return;
-        if (touchMoveX > 240) return;
+        if (touchMoveX > sliderWidth) return;
         if (!isShown && !trigger) return;
 
         sidebarOnMoving(touchMoveX);
@@ -55,10 +58,9 @@ window.addEventListener("load", function(event) {
     window.addEventListener("touchend", function(event) {
         if (!isShown && !trigger) return;
         if (isOverSideFrame(touchStartX) && !wasMoved) {
-            console.log('こっち');
             scrollable();
-            autoTranslate(241, 'left');
-            autoMask(241, 'left');
+            autoTranslate(sliderWidth, 'left');
+            autoMask(sliderWidth, 'left');
             autoMaskHide();
         } else {
             // console.log(isQuickFlip(new Date().getTime(), touchMoveX - touchStartX));
@@ -76,8 +78,8 @@ window.addEventListener("load", function(event) {
 
     $(document).on('touchend', '.side-nav dl dd a', function() {
         scrollable();
-        autoTranslate(241, 'left');
-        autoMask(241, 'left');
+        autoTranslate(sliderWidth, 'left');
+        autoMask(sliderWidth, 'left');
         autoMaskHide();
     });
 
@@ -115,18 +117,18 @@ window.addEventListener("load", function(event) {
     }
 
     function sidebarOnMoving(X) {
-        $('.modal-mask').css('opasity', X / 240);
-        $('.mobile-sidebar').css('left', X);
+        $('.modal-mask').css('opasity', X / sliderWidth);
+        $('.mobile-sidebar').css('left', X - sliderWidth);
     }
 
     function maskOnMoving(X) {
         $('.modal-mask').css({
-            'opacity': X / 240
+            'opacity': X / sliderWidth
         });
     }
 
     function isOverHalf(X) {
-        return X > 120;
+        return X > sliderWidth / 2;
     }
 
     function isQuickFlip(actionEndTime, actionDistance) {
@@ -137,7 +139,7 @@ window.addEventListener("load", function(event) {
     }
 
     function isOverSideFrame(X) {
-        return X > 241;
+        return X > sliderWidth;
     }
 
     function isAble(isShown) {
@@ -154,14 +156,15 @@ window.addEventListener("load", function(event) {
             distance = startX;
             isShown = false;
         } else if (direction == "right") {
-            destination = 240;
+            destination = sliderWidth;
             distance = destination - startX;
             isShown = true;
         };
+        console.log(destination)
         $('.mobile-sidebar').animate({
-            'left': destination
+            'left': destination - sliderWidth
         },{
-            'duration': 200 * distance / 240,
+            'duration': 200 * distance / sliderWidth,
             'easing': 'easeInOutQuart'
         });
     }
@@ -177,7 +180,7 @@ window.addEventListener("load", function(event) {
         $('.modal-mask').animate({
             'opacity': destination
         },{
-            'duration': 200 * distance / 240,
+            'duration': 200 * distance / sliderWidth,
             'easing': 'easeInOutQuart'
         });
     }
