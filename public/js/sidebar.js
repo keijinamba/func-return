@@ -61,9 +61,9 @@ window.addEventListener("load", function(event) {
             scrollable();
             autoTranslate(sliderWidth, 'left');
             autoMask(sliderWidth, 'left');
+
             autoMaskHide();
         } else {
-            // console.log(isQuickFlip(new Date().getTime(), touchMoveX - touchStartX));
             afterChasing(touchStartX, touchMoveX);
         }
         trigger = false;
@@ -160,7 +160,6 @@ window.addEventListener("load", function(event) {
             distance = destination - startX;
             isShown = true;
         };
-        console.log(destination)
         $('.mobile-sidebar').animate({
             'left': destination - sliderWidth
         },{
@@ -192,9 +191,11 @@ window.addEventListener("load", function(event) {
     }
 
     function autoMaskHide() {
-        $('.modal-mask').css({
-            'visibility': 'hidden',
-        });
+        setTimeout(function() {
+            $('.modal-mask').css({
+                'visibility': 'hidden',
+            });
+        }, 200);
     }
 
     function unscrollable(){
