@@ -52,7 +52,6 @@ $(document).on('keyup', '.top-search-modal-input', function() {
 	$.ajaxSetup({ headers: {
 	  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	}});
-	console.log(1);
 	$.ajax({
 		url: '/search',
 		type: 'POST',
@@ -65,8 +64,29 @@ $(document).on('keyup', '.top-search-modal-input', function() {
 	});
 });
 
+// view
+$(document).on('click', '.analyze-page .analyze-page-body button', function() {
+	var id = $('.main').data('id');
+	$.ajaxSetup({ headers: {
+	  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	}});
+	$.ajax({
+		url: '/articles/analyze',
+		type: 'POST',
+		dataType: 'json',
+		data: {id: id},
+		success: function(data) {
+			insertAnalyzeRes(data);
+		},
+		error: function() {}
+	});
+});
+
+$(document).on('click', '.analyze-page-body-main-remove', function() {
+	$('.analyze-page-body-main').html('');
+});
+
 function insertSearchRes(data) {
-	console.log(2);
 	if (data['articles'].length == 0) {
 		$('.top-search-res-articles').html('');
 	};
@@ -86,7 +106,22 @@ function insertSearchRes(data) {
 			$('.top-search-res-tags').append('<span class="tag-original"><a href="/tags/'+val['id']+'">'+val['name']+'</a></span>');
 		});
 	};
-	console.log(3);
+}
+
+function insertAnalyzeRes(data) {
+	$('.analyze-page-body-main').html('');
+	$('.analyze-page-body-main').append('<span class="glyphicon glyphicon-remove analyze-page-body-main-remove" aria-hidden="true"></span>');
+	$('.analyze-page-body-main').append('<h2 class="analyze-page-body-main-title">タイトル</h2>');
+	$.each(data['title'], function(key, val) {
+		console.log(key + ' : ' + String(val));
+		$('.analyze-page-body-main').append('<div class="analyze-page-body-main-contents"><span>' + key + '</span><span> : </span><span>' + String(val) + '回</span></div>');
+	});
+	$('.analyze-page-body-main').append('<h2 class="analyze-page-body-main-title">説明文</h2>');
+	$.each(data['discription'], function(key, val) {
+		console.log(key + ' : ' + String(val));
+		$('.analyze-page-body-main').append('<div class="analyze-page-body-main-contents"><span>' + key + '</span><span> : </span><span>' + String(val) + '回</span></div>');
+	});
+	return;
 }
 
 function unscrollable(){

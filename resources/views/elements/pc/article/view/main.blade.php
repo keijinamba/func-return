@@ -1,4 +1,4 @@
-<div class="main col-sm-12 col-md-9">
+<div class="main col-sm-12 col-md-9" data-id="{{ $article->id }}">
 	<div class="w-auto">
 		<div>
 			@foreach($article->articlestag as $articlestag)
@@ -36,6 +36,23 @@
 			</div>
 		</div>
 		@include('elements/pc/article/view/comment')
+		<div class="col-sm-12 col-md-12 panel panel-default analyze-page">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">このページを解析する</h3>
+		  </div>
+		  <div class="panel-body analyze-page-body">
+		  	<div class="alert alert-info analyze-page-body-info" role="alert">
+				  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				  <span class="sr-only"></span>
+				  ここでは形態素解析エンジンMeCabを使って、ページ内に出現する名刺を抽出して、その出現頻度順に表示することができます。
+				</div>
+		    <button type="button" class="btn btn-default btn-lg shadow3">
+				  <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
+				  <span class="ml10 mr5">解析する</span>
+				</button>
+				<div class="analyze-page-body-main"></div>
+		  </div>
+		</div>
 		<div class="articles_under_list">
 			<div class="panel panel-default shadow1">
 			  <div class="panel-heading">

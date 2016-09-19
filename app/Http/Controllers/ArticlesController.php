@@ -12,6 +12,7 @@ use App\Category;
 use App\Tag;
 use App\ArticlesTag;
 use App\Comment;
+use App\Word;
 use Image;
 
 class ArticlesController extends Controller
@@ -101,6 +102,16 @@ class ArticlesController extends Controller
             array_push($res['tags'], array('id' => $tag->id,'name' => $tag->name));
         }
         return json_encode($res);
+    }
+
+    public function postAnalyze(Request $data) {
+        $article = Article::find($data->id);
+        $word = new Word();
+        $array_title = $word->analyzeSentence($article->title);
+        arsort($array_title);
+        $array_discription = $word->analyzeSentence($article->discription);
+        arsort($array_discription);
+        return json_encode(array('title' => $array_title, 'discription' => $array_discription));
     }
 
     public function saveUnkownTag($name) {

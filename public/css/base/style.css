@@ -240,6 +240,12 @@ a.list-group-item:hover { background-color: initial; }
 .body h2 { border-bottom: solid 1px #eee; font-size: 25px; color: #555; font-weight: 600; line-height: 30px; margin-bottom: 30px; padding-bottom: 5px; }
 .body h3 { font-size: 25px; color: #555; font-weight: 600; line-height: 30px; margin-bottom: 30px; }
 .content-image { max-width: 100%; margin: 20px 0; }
+.analyze-page .analyze-page-body { text-align: center; }
+.analyze-page .analyze-page-body .analyze-page-body-info { margin-top: 24px; margin-bottom: 32px; }
+.analyze-page .analyze-page-body .analyze-page-body-main { margin: 56px 0; text-align: left; }
+.analyze-page .analyze-page-body .analyze-page-body-main .analyze-page-body-main-remove { float: right; }
+.analyze-page .analyze-page-body .analyze-page-body-main .analyze-page-body-main-title { margin-top: 56px; }
+.analyze-page .analyze-page-body .analyze-page-body-main .analyze-page-body-main-contents { margin: 8px; }
 
 @media(max-width: 991px) {
 	.comment_wrapper { width: 100%; overflow-y: hidden; background: #eeeeee; padding: 30px 20px; margin: 50px 0; float: initial; }
