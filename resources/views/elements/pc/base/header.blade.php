@@ -25,7 +25,6 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
         </dd>
         <dt>その他のページ</dt>
         <dd>
-          <a href="/models">モデルアプリ</a>
           <a href="/about">制作者について</a>
           <a href="mailto:kijnmb.1110@gmail.com">お問い合わせ</a>
         </dd>
