@@ -25,6 +25,7 @@ Route::post('/articles/upload_image', 'ArticlesController@upload_image');
 Route::post('/articles/findImages', 'ArticlesController@findImages');
 Route::get('/articles/edit/{id}', 'ArticlesController@getEdit');
 Route::post('/articles/edit{id}', 'ArticlesController@postEdit');
+Route::post('/articles/analyze', 'ArticlesController@postAnalyze');
 Route::get('/search', 'ArticlesController@getSearch');
 Route::post('/search', 'ArticlesController@postSearch');
 Route::get('/categories', 'CategoriesController@index');
