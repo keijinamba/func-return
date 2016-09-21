@@ -16,3 +16,7 @@
 @include('elements/pc/article/analyze/contents')
 @include('elements/pc/base/footer', ['bgcolor' => 'mediumorchid'])
 @endsection
+
+@section('script')
+<script type="text/javascript" src="/js/analyze.js"></script>
+@endsection

@@ -107,17 +107,23 @@ class ArticlesController extends Controller
     public function postAnalyzeArticles(Request $data) {
         $article = Article::find($data->id);
         $word = new Word();
-        $array_title = $word->analyzeSentence($article->title);
+        $array_title = $word->analyzeArticleSentence($article->title);
         arsort($array_title);
-        $array_discription = $word->analyzeSentence($article->discription);
+        $array_discription = $word->analyzeArticleSentence($article->discription);
         arsort($array_discription);
-        $array_body = $word->analyzeSentence($article->body);
+        $array_body = $word->analyzeArticleSentence($article->body);
         arsort($array_body);
         return json_encode(array('title' => $array_title, 'discription' => $array_discription, 'body' => $array_body));
     }
 
     public function getAnalyze() {
         return view('articles/analyze');
+    }
+
+    public function postAnalyzeMecab(Request $data) {
+        $word = new Word();
+        $res = $word->analyzeSentence($data->text);
+        return json_encode($res);
     }
 
     public function saveUnkownTag($name) {

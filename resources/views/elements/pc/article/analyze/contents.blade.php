@@ -16,7 +16,14 @@
       <button type="submit">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </button>
-      <input class="top-search-modal-input" type="text" name="word" placeholder="文章を入力" autocomplete="off">
+      <input class="analyze-main-input-text" type="text" name="word" placeholder="文章を入力" autocomplete="off">
+    </div>
+    <div class="analyze-main-results">
+    	<h2>「？？？」を形態素解析した結果</h2>
+    	<div class="panel panel-default">
+			  <div class="panel-body">
+			  </div>
+			</div>
     </div>
 	</div>
 </div>
