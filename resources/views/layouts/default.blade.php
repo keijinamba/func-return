@@ -4,7 +4,7 @@
 	@yield('meta')
 	<link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css">
 	@yield('css')
-	<link rel="stylesheet" type="text/css" href="/css/base/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/base/style.css<?php echo (isset($uncacheParam) && $uncacheParam) ? "?up=". $uncacheParam : ""; ?>">
 	@if($isProduct && !preg_match("|users/|",Request::path()) && !preg_match("|/add|",Request::path()) && !preg_match("|/edit|",Request::path()) && !preg_match("|admin-user/|",Request::path()))
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -26,8 +26,8 @@
 	<script type="text/javascript" src="/assets/jquery/jquery.easing.js"></script>
 	<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/assets/bootstrap/dist/bootstrap-tagsinput.min.js"></script>
-	<script type="text/javascript" src="/js/base.js"></script>
-	<script type="text/javascript" src="/js/sidebar.js"></script>
+	<script type="text/javascript" src="/js/base.js<?php echo (isset($uncacheParam) && $uncacheParam) ? "?up=". $uncacheParam : ""; ?>"></script>
+	<script type="text/javascript" src="/js/sidebar.js<?php echo (isset($uncacheParam) && $uncacheParam) ? "?up=". $uncacheParam : ""; ?>"></script>
 	@yield('script')
 </body>
 </html>
