@@ -12,6 +12,16 @@
 
 <div class="jumbotron col-sm-12 col-md-12 analyze-main">
 	<div class="container">
+		<div class="bs-callout bs-callout-purple" id="callout-glyphicons-location">
+			<h4>形態素解析を体験</h4>
+			<p>形態素解析とは、自然言語のテキストデータ（文）から、対象言語の文法や、辞書と呼ばれる単語の品詞等の情報にもとづき、言語で意味を持つ最小単位の列に分割し、それぞれの形態素の品詞等を判別すること。<br><a href="https://ja.wikipedia.org/wiki/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90">ー Wikipedia </a></p>
+			<ul>
+				<li>形態素解析エンジンとしてMeCabを使っています。</li>
+				<li>今回使っている辞書はデフォルトのシステム辞書のみです。</li>
+				<li>ユーザー辞書は使っていません。</li>
+			</ul>
+			<p>以下に、入力した単語を形態素解析し、単語レベルに分割した結果を返します。</p>
+		</div>
 		<div class="analyze-main-input-box">
       <button type="submit">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
