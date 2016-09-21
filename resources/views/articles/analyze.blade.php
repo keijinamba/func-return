@@ -18,5 +18,5 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="/js/analyze.js"></script>
+<script type="text/javascript" src="/js/analyze.js<?php echo (isset($uncacheParam) && $uncacheParam) ? "?up=". $uncacheParam : ""; ?>"></script>
 @endsection
