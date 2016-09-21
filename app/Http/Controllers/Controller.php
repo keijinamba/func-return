@@ -34,15 +34,30 @@ class Controller extends BaseController
 
 		  View::share('data', $data);
 		  View::share('isMobile', $isMobile);
-		  View::share('isProduct', $this->getEnv());
+		  View::share('isProduct', $this->isProduct());
+		  View::share('uncacheParam', $this->getUncacheParam());
+		}
+
+		public function isProduct() {
+			$str = $this->getEnv();
+			$array = explode(',', $str);
+			$isProduct = (isset($array[0]) && $array[0] == 1) ? true : false;
+			return $isProduct;
+		}
+
+		public function getUncacheParam() {
+			$str = $this->getEnv();
+			$array = explode(',', $str);
+			$uncacheParam = (isset($array[1]) && $array[1]) ? $array[1] : null;
+			return $uncacheParam;
 		}
 
 		public function getEnv() {
 			$base_path = base_path();
     	$envconfig_path = $base_path."/../envconfig.txt";
     	$envconfig = file_get_contents($envconfig_path);
-    	$isProduct = ($envconfig == "1") ? true : false;
-    	return $isProduct;
+    	$trimmed_envconfig = trim($envconfig);
+    	return $trimmed_envconfig;
 		}
 
 		public function getUserAgent(){
