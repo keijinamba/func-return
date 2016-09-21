@@ -104,14 +104,20 @@ class ArticlesController extends Controller
         return json_encode($res);
     }
 
-    public function postAnalyze(Request $data) {
+    public function postAnalyzeArticles(Request $data) {
         $article = Article::find($data->id);
         $word = new Word();
         $array_title = $word->analyzeSentence($article->title);
         arsort($array_title);
         $array_discription = $word->analyzeSentence($article->discription);
         arsort($array_discription);
-        return json_encode(array('title' => $array_title, 'discription' => $array_discription));
+        $array_body = $word->analyzeSentence($article->body);
+        arsort($array_body);
+        return json_encode(array('title' => $array_title, 'discription' => $array_discription, 'body' => $array_body));
+    }
+
+    public function getAnalyze() {
+        return view('articles/analyze');
     }
 
     public function saveUnkownTag($name) {

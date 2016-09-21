@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css">
 	@yield('css')
 	<link rel="stylesheet" type="text/css" href="/css/base/style.css">
-	@if(!preg_match("|users/|",Request::path()) && !preg_match("|/add|",Request::path()) && !preg_match("|/edit|",Request::path()) && !preg_match("|admin-user/|",Request::path()))
+	@if($isProduct && !preg_match("|users/|",Request::path()) && !preg_match("|/add|",Request::path()) && !preg_match("|/edit|",Request::path()) && !preg_match("|admin-user/|",Request::path()))
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

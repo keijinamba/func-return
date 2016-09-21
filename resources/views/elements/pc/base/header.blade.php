@@ -23,6 +23,10 @@ $bgcolor = (isset($bgcolor) && $bgcolor) ? $bgcolor : "cobalt";
           <a href="/categories/{{ $category->id }}">{{ $category->name }}</a>
           @endforeach
         </dd>
+        <dt>その他のコンテンツ</dt>
+        <dd>
+          <a href="/analyze">自然言語処理</a>
+        </dd>
         <dt>その他のページ</dt>
         <dd>
           <a href="/about">制作者について</a>

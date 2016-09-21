@@ -113,12 +113,14 @@ function insertAnalyzeRes(data) {
 	$('.analyze-page-body-main').append('<span class="glyphicon glyphicon-remove analyze-page-body-main-remove" aria-hidden="true"></span>');
 	$('.analyze-page-body-main').append('<h2 class="analyze-page-body-main-title">タイトル</h2>');
 	$.each(data['title'], function(key, val) {
-		console.log(key + ' : ' + String(val));
 		$('.analyze-page-body-main').append('<div class="analyze-page-body-main-contents"><span>' + key + '</span><span> : </span><span>' + String(val) + '回</span></div>');
 	});
 	$('.analyze-page-body-main').append('<h2 class="analyze-page-body-main-title">説明文</h2>');
 	$.each(data['discription'], function(key, val) {
-		console.log(key + ' : ' + String(val));
+		$('.analyze-page-body-main').append('<div class="analyze-page-body-main-contents"><span>' + key + '</span><span> : </span><span>' + String(val) + '回</span></div>');
+	});
+	$('.analyze-page-body-main').append('<h2 class="analyze-page-body-main-title">本文</h2>');
+	$.each(data['body'], function(key, val) {
 		$('.analyze-page-body-main').append('<div class="analyze-page-body-main-contents"><span>' + key + '</span><span> : </span><span>' + String(val) + '回</span></div>');
 	});
 	return;

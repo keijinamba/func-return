@@ -21,6 +21,7 @@ class Controller extends BaseController
     private $ua;
     private $device;
 
+
     public function __construct() {
 		  $categories = Category::all();
 
@@ -33,6 +34,15 @@ class Controller extends BaseController
 
 		  View::share('data', $data);
 		  View::share('isMobile', $isMobile);
+		  View::share('isProduct', $this->getEnv());
+		}
+
+		public function getEnv() {
+			$base_path = base_path();
+    	$envconfig_path = $base_path."/../envconfig.txt";
+    	$envconfig = file_get_contents($envconfig_path);
+    	$isProduct = ($envconfig == "1") ? true : false;
+    	return $isProduct;
 		}
 
 		public function getUserAgent(){
