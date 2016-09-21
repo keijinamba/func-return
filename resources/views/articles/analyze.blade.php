@@ -11,11 +11,8 @@
 @endsection
 
 @section('content')
-@include('elements/pc/base/header')
+@include('elements/pc/base/header', ['bgcolor' => 'mediumorchid'])
 @include('elements/pc/base/pankuzu', ['pankuzu' => ['Home' => '/', '自然言語処理' => 'disable']])
 @include('elements/pc/article/analyze/contents')
-@include('elements/pc/base/footer')
+@include('elements/pc/base/footer', ['bgcolor' => 'mediumorchid'])
 @endsection
-
-@extends('layouts/default')
-
