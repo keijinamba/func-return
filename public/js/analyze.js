@@ -2,6 +2,7 @@ $(document).on('click', '.analyze-main-input-box button', function() {
 	var analyze_text = $('.analyze-main-input-text').val();
 	if (!analyze_text) {
 		alert('文章を入力してください！');
+		return;
 	}
 	$.ajaxSetup({ headers: {
 	  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
