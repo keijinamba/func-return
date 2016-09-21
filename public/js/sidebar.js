@@ -21,7 +21,7 @@ window.addEventListener("load", function(event) {
 
         wasMoved = false;
 
-        if (isShown == false && touchStartX > 10) return;
+        if (isShown == false && touchStartX > 30) return;
 
         if (!isShown) {
             unscrollable();
