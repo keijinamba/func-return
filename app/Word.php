@@ -12,6 +12,22 @@ class Word extends Model
 
 
     public function analyzeSentence($str) {
+        $res = array();
+        $mecab = new \MeCab\Tagger();
+        $obj = $mecab->parseToNode($str);
+
+        foreach ($obj as $n) {
+            $array = array(
+                'word' => $n->getSurface(),
+                'feature' => $n->getFeature()
+            );
+            array_push($res, $array);
+        }
+        
+        return $res;
+    }
+
+    public function analyzeArticleSentence($str) {
     	$array = array();
         $mecab = new \MeCab\Tagger();
         $obj = $mecab->parseToNode($str);

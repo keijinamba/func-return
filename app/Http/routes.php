@@ -29,6 +29,7 @@ Route::post('/articles/analyze', 'ArticlesController@postAnalyzeArticles');
 Route::get('/search', 'ArticlesController@getSearch');
 Route::post('/search', 'ArticlesController@postSearch');
 Route::get('/analyze', 'ArticlesController@getAnalyze');
+Route::post('/analyze/mecab', 'ArticlesController@postAnalyzeMecab');
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/add', 'CategoriesController@getAdd');
 Route::get('/categories/{id}', 'CategoriesController@detail');

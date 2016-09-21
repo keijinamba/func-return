@@ -269,8 +269,23 @@ a.list-group-item:hover { background-color: initial; }
 /* analyze */
 .analyze-jumbutron { background-position: center center; background-size: cover; color: #fff; }
 .analyze-jumbutron .container .btn { background-color: #5E35B1; border-color: #5E35B1; }
-.analyze-main { height: 500px; }
+.analyze-main { min-height: 360px; overflow-y: hidden; }
 .analyze-main-input-box { height: 36px; padding: 16px; border-bottom:1px solid rgba(0,0,0,0.12);background:rgba(255,255,255,1); -webkit-box-sizing: initial; -moz-box-sizing: initial; box-sizing: initial; }
 .analyze-main-input-box button { padding: 0; outline: none; background: transparent center center no-repeat; background-size: 36px 36px; border: 0; }
 .analyze-main-input-box button span { font-size: 20px; line-height: 36px; }
 .analyze-main-input-box input { height: 36px; width: calc(100% - 30px); font-size: 20px; border: none; outline: none; padding-left: 16px; vertical-align: top; }
+.analyze-main-results { padding: 24px 36px; display: none; }
+.analyze-main-results h2 { font-weight: bold; margin: 0; padding: 24px 12px; border-bottom: solid 1px #999; }
+.analyze-main-results .panel { margin-top: 56px; }
+.analyze-main-results .panel .panel-body div { margin: 24px 0; }
+.analyze-main-results .panel .panel-body div p { font-size: 18px; margin: 0; }
+
+@media(max-width: 991px) {
+  .analyze-jumbutron p { font-size: 16px; }
+  .analyze-main-input-box input { font-size: 16px; }
+  .analyze-main-results { padding: 24px 0; }
+  .analyze-main-results h2 { font-size: 21px; }
+  .analyze-main-results .panel { margin-top: 36px; }
+  .analyze-main-results .panel .panel-body div { margin: 12px 0; }
+  .analyze-main-results .panel .panel-body div p { font-size: 12px; }
+}

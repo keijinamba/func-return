@@ -86,6 +86,8 @@ $(document).on('click', '.analyze-page-body-main-remove', function() {
 	$('.analyze-page-body-main').html('');
 });
 
+
+
 function insertSearchRes(data) {
 	if (data['articles'].length == 0) {
 		$('.top-search-res-articles').html('');
