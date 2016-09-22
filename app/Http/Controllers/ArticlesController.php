@@ -111,7 +111,7 @@ class ArticlesController extends Controller
         arsort($array_title);
         $array_discription = $word->analyzeArticleSentence($article->discription);
         arsort($array_discription);
-        $array_body = $word->analyzeArticleSentence($article->body);
+        $array_body = $word->analyzeArticleSentence(strip_tags($article->body));
         arsort($array_body);
         return json_encode(array('title' => $array_title, 'discription' => $array_discription, 'body' => $array_body));
     }
